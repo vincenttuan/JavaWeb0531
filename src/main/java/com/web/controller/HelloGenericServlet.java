@@ -7,13 +7,16 @@ import javax.servlet.GenericServlet;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-
-
+/*
+    Client請求URL http://localhost:8080/JavaWeb0531/hi?name=John
+    /JavaWeb0531 -> Context path, 要到 META-INF/context.xml 中設定與配置
+    /hi          -> url-pattern,  要到 WEB-INF/web.xml 中設定與配置
+*/
 public class HelloGenericServlet extends GenericServlet {
 
     @Override
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-        // req 表示收到 client 的請求資訊 http://localhost:8080/.../...?name=John
+        // req 表示收到 client 的請求資訊 
         String name = req.getParameter("name");
         
         // res 表示要回應給 client 端的內容
