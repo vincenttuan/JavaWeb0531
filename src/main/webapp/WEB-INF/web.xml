@@ -16,10 +16,20 @@
         <servlet-class>com.web.controller.HelloGenericServlet</servlet-class>
     </servlet>
     
+    <servlet>
+        <servlet-name>HelloHttpServlet</servlet-name>
+        <servlet-class>com.web.controller.HelloHttpServlet</servlet-class>
+    </servlet>
+    
     <!-- Servlet 給 Client url 對應配置 -->
     <servlet-mapping>
         <url-pattern>/hi</url-pattern>
         <servlet-name>HelloGenericServlet</servlet-name>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <url-pattern>/hello</url-pattern>
+        <servlet-name>HelloHttpServlet</servlet-name>
     </servlet-mapping>
     
 </web-app>
