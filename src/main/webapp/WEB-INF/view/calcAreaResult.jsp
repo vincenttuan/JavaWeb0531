@@ -15,8 +15,9 @@
         <form class="pure-form">
             <fieldset>
                 <legend style="color: #005100">計算<%=request.getAttribute("typeName") %>結果</legend>
-                半徑：<font color="#0000ff"><%=request.getAttribute("r") %></font><p />
-                結果：<font color="#ff0000"><%=request.getAttribute("result") %></font>
+                半徑：<font color="#0000ff"><%=request.getAttribute("r") %></font><br />
+                結果：<font color="#ff0000"><%=request.getAttribute("result") %></font><p />
+                <button type="button" onclick="window.history.back()" class="pure-button pure-button-primary">回上一頁</button>
             </fieldset>
         </form>
     </body>
