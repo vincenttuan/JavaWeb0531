@@ -14,8 +14,9 @@
     <body style="padding: 20px">
         <form class="pure-form">
             <fieldset>
-                <legend>計算面積結果</legend>
-                <%=request.getAttribute("result") %>
+                <legend style="color: #005100">計算面積結果</legend>
+                半徑：<font color="#0000ff"><%=request.getAttribute("r") %></font><p />
+                結果：<font color="#ff0000"><%=request.getAttribute("result") %></font>
             </fieldset>
         </form>
     </body>
