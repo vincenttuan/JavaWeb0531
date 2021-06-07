@@ -6,10 +6,10 @@
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
     </head>
     <body style="padding: 20px">
-        <form class="pure-form">
+        <form class="pure-form" method="post" action="/JavaWeb0531/controller/CalcArea">
             <fieldset>
                 <legend>計算面積</legend>
-                <input type="number" placeholder="請輸入半徑" />
+                <input type="number" placeholder="請輸入半徑" name="r" />
                 <button type="submit" class="pure-button pure-button-primary">計算</button>
             </fieldset>
         </form>
