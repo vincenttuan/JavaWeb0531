@@ -9,10 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+// http://localhost:8080/JavaWeb0531/HelloNewServlet
+// http://localhost:8080/JavaWeb0531/aaa/bbb/ccc
+// http://localhost:8080/JavaWeb0531/hello.asp
+// http://localhost:8080/JavaWeb0531/anyword/任意字串
 // 利用 @ 配置 Servlet
 @WebServlet(name = "HelloNewServlet", 
-            urlPatterns = {"/HelloNewServlet"})
+            urlPatterns = {"/HelloNewServlet", 
+                           "/aaa/bbb/ccc", 
+                           "/hello.asp",
+                           "/anyword/*"})
 public class HelloNewServlet extends HttpServlet {
 
     @Override
