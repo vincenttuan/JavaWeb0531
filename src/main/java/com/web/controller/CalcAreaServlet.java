@@ -28,7 +28,7 @@ public class CalcAreaServlet extends HttpServlet {
         String typeName = service.getNameByType(type);
         
         // 3. 建立分派器與 jsp 位置
-        RequestDispatcher rd = req.getRequestDispatcher("/jsps/calcAreaResult.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/view/calcAreaResult.jsp");
         // 3.1 新增/設定 request 屬性, 傳遞給 jsp 頁面使用
         req.setAttribute("r", r);
         req.setAttribute("result", String.format("%.2f", area));
