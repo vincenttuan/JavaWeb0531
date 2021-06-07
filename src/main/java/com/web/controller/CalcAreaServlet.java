@@ -25,12 +25,14 @@ public class CalcAreaServlet extends HttpServlet {
         
         // 2. 商業邏輯運算
         double area = service.getAreaResult(type, r);
+        String typeName = service.getNameByType(type);
         
         // 3. 建立分派器與 jsp 位置
         RequestDispatcher rd = req.getRequestDispatcher("/jsps/calcAreaResult.jsp");
         // 3.1 新增/設定 request 屬性, 傳遞給 jsp 頁面使用
         req.setAttribute("r", r);
         req.setAttribute("result", String.format("%.2f", area));
+        req.setAttribute("typeName", typeName);
         // 3.2 傳送
         rd.forward(req, resp);
         //resp.getWriter().print(String.format("r: %d area: %.2f", r, area));
