@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import static java.util.stream.Collectors.toList;
 import java.util.stream.Stream;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,7 +26,12 @@ public class RegisterServlet extends HttpServlet {
         Boolean pay   = Boolean.parseBoolean(req.getParameter("pay"));
         String memo   = req.getParameter("memo");
         
+        // 分派器
+        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/view/registerResult.jsp");
+        // 配置參數
         
+        // 分派
+        rd.forward(req, resp);
     }
     
 }
