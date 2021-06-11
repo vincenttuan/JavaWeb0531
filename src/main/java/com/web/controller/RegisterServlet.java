@@ -1,5 +1,6 @@
 package com.web.controller;
 
+import com.web.service.RegisterService;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/controller/Register")
 public class RegisterServlet extends HttpServlet {
-
+    private RegisterService service = new RegisterService();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // sno=A01&eno=1z0-900&time=1&time=3&pay=true&memo=GO
@@ -31,7 +32,7 @@ public class RegisterServlet extends HttpServlet {
         // 配置參數
         req.setAttribute("sno",  sno);
         req.setAttribute("eno",  eno);
-        req.setAttribute("time", time);
+        req.setAttribute("time", service.getTimeNamesById(time));
         req.setAttribute("pay",  pay);
         req.setAttribute("memo", memo);
         // 分派
