@@ -15,6 +15,7 @@ public class RegisterService {
     }
     
     public List<String> getTimeNamesById(List<Integer> time) {
+        if (time.size() == 0) return null;
         // {1, 3} -> {"上午", "晚上"}
         return time.stream()
                 .map(t -> timeNames.get(t))
