@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>表單註冊</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="../icons/favicon.ico" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
+    </head>
+    <body style="padding: 20px">
+        <form class="pure-form" method="post" action="/JavaWeb0531/controller/Register">
+            <fieldset>
+                <legend>表單註冊</legend>
+                
+                <input type="text" name="sno" placeholder="學員編號" />
+                <select name="eno">
+                    <option value="1z0-808" selected>Java 基礎認證</option>
+                    <option value="1z0-809">Java 專業認證</option>
+                    <option value="1z0-900">Java Web認證</option>
+                </select>
+                <p />
+                考試時段（可複選）：
+                上午&nbsp;<input type="checkbox" name="time" value="1" />
+                下午&nbsp;<input type="checkbox" name="time" value="2" />
+                晚上&nbsp;<input type="checkbox" name="time" value="3" />
+                <p />
+                繳費狀況：
+                已繳&nbsp;<input type="radio" name="pay" value="true" />
+                未繳&nbsp;<input type="radio" name="pay" value="false" />
+                <p />
+                備註：
+                <textarea name="memo" rows="3" cols="30"></textarea>
+                <p />
+                <button type="submit" class="pure-button pure-button-primary">註冊</button>
+                <button type="reset" class="pure-button pure-button-primary">清除</button>
+            </fieldset>
+        </form>
+    </body>
+</html>
