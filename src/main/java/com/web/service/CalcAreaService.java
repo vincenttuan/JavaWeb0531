@@ -46,10 +46,10 @@ public class CalcAreaService {
             int type    = Integer.parseInt(types[i]);
             int r       = Integer.parseInt(rs[i]);
             String name = getNameByType(type);
-            double area = getAreaResult(type, r);
+            double result = getAreaResult(type, r);
             Map map = new LinkedHashMap();
             map.put("r", r);
-            map.put("area", area);
+            map.put("result", result);
             map.put("name", name);
             list.add(map);
         }
