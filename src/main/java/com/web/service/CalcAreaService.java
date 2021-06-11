@@ -41,7 +41,7 @@ public class CalcAreaService {
         List<Map> list = new ArrayList<>();
         for(int i=0;i<types.length;i++) {
             if (rs[i] == null || rs[i].equals("")) {
-                types[i] = "0";
+                rs[i] = "0";
             }
             int type    = Integer.parseInt(types[i]);
             int r       = Integer.parseInt(rs[i]);

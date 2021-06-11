@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>計算<%=request.getAttribute("typeName") %>結果</title>
+        <title>計算結果</title>
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
     </head>
     <body style="padding: 20px">
