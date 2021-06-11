@@ -47,5 +47,17 @@
             </fieldset>
         </form>
         
+        <form class="pure-form" 
+              enctype="multipart/form-data"
+              method="post" action="/JavaWeb0531/controller/BMI">
+            <fieldset>
+                <legend>Upload (表單編碼:multipart/form-data)</legend>
+                <input name="cname" type="text" placeholder="圖片名稱" value="我的圖片"><p /> 
+                <p />
+                <input type="file" name="upload_file" />
+                <p />
+                <button type="submit" class="pure-button pure-button-primary">註冊</button>
+            </fieldset>
+        </form>
     </body>
 </html>
