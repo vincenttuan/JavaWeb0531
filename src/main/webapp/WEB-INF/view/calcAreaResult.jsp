@@ -16,6 +16,7 @@
     <body style="padding: 20px">
         <% List<Map> list = (List)request.getAttribute("list");  %>
         <% for(Map map : list) {  %>
+        <% if(map.get("r").toString().equals("0")) continue; %>
             <form class="pure-form">
                 <fieldset>
                     <legend style="color: #005100">計算<%=map.get("name") %>結果</legend>
