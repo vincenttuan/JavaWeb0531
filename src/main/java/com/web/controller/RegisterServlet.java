@@ -3,7 +3,6 @@ package com.web.controller;
 import com.web.service.RegisterService;
 import java.io.IOException;
 import java.util.List;
-import java.util.stream.Collectors;
 import static java.util.stream.Collectors.toList;
 import java.util.stream.Stream;
 import javax.servlet.RequestDispatcher;
