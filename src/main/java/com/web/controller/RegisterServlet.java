@@ -29,7 +29,11 @@ public class RegisterServlet extends HttpServlet {
         // 分派器
         RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/view/registerResult.jsp");
         // 配置參數
-        
+        req.setAttribute("sno",  sno);
+        req.setAttribute("eno",  eno);
+        req.setAttribute("time", time);
+        req.setAttribute("pay",  pay);
+        req.setAttribute("memo", memo);
         // 分派
         rd.forward(req, resp);
     }

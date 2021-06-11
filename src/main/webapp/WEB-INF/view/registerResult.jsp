@@ -7,6 +7,15 @@
 <%@page import="java.util.Map"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    String sno  = request.getAttribute("sno").toString();
+    String eno  = request.getAttribute("eno").toString();
+    String time = request.getAttribute("time").toString();
+    String payString  = request.getAttribute("pay").toString();
+    Boolean pay = Boolean.parseBoolean(payString);
+    String memo = request.getAttribute("memo").toString();
+%>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,11 +26,11 @@
         <form class="pure-form">
             <fieldset>
                 <legend style="color: #005100">註冊結果</legend>
-                學員編號：<p />
-                認證代號：<p />
-                考試時段：<p />
-                繳費狀況：<p />
-                備註資料：<p />
+                學員編號：<%=sno %><p />
+                認證代號：<%=eno %><p />
+                考試時段：<%=time %><p />
+                繳費狀況：<%=(pay)?"已繳":"未繳" %><p />
+                備註資料：<%=memo %><p />
                 <button type="button" onclick="window.history.back()" class="pure-button pure-button-primary">回上一頁</button>
             </fieldset>
         </form>
