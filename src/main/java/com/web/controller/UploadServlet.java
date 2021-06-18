@@ -94,6 +94,9 @@ public class UploadServlet extends HttpServlet {
                         
                         resp.getWriter().print(part.getName() + " : ");
                         resp.getWriter().print(data + "<br />");
+                        String img = "<img src='data:image/png;base64, %s'>";
+                        img = String.format(img, data);
+                        resp.getWriter().print(img + "<br />");
                     } catch (Exception e) {
                     }
                 });
