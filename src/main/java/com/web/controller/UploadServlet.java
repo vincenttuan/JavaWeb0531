@@ -39,9 +39,12 @@ public class UploadServlet extends HttpServlet {
     private void uploadFile(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getParts()
                 .stream()
+                .filter(part -> part.getName().equals("cname"))
                 .forEach(part -> {
                     try {
+                        String cname = part.getInputStream().toString();
                         resp.getWriter().print(part.getName() + "<br />");
+                        resp.getWriter().print(cname + "<br />");
                     } catch (Exception e) {
                     }
                 });
