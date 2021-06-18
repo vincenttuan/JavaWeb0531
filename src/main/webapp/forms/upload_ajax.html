@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Upload Ajax</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="../icons/favicon.ico" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
+        <script>
+
+            function ajaxSuccess() {
+                var content = this.responseText;
+                console.log(content);
+                var obj = JSON.parse(content);
+                document.getElementById('demo').innerHTML = obj.title + "<p>"
+                        + "<img src='data:image/png;base64," + obj.photosBase64 + "'>";
+            }
+
+            function ajaxSubmit(oFormElement) {
+                if (!oFormElement.action) {
+                    return;
+                }
+                var xhttp = new XMLHttpRequest();
+                xhttp.onload = ajaxSuccess;
+                xhttp.open("post", oFormElement.action);
+                xhttp.send(new FormData(oFormElement));
+            }
+
+            function reloadImage(img) {
+                // 需要加上 Math.random() 來規避 js cache，否則圖片出不來。
+                img.src = img.src.split('?')[0] + "?" + Math.random();
+                console.log(img.src);
+            }
+        </script>
+    </head>
+    <body style="padding: 20px">
+        <form class="pure-form pure-form-stacked"
+              action="/JavaWeb0531/controller/upload/ajax" method="post"
+              enctype="multipart/form-data"
+              onsubmit="ajaxSubmit(this);
+                      return false;">
+            <fieldset>
+                <legend>Upload File（Ajax）</legend>
+                Title: <input type="text" name="title" /><br>
+                Post your photos: <input type="file" multiple name="photos"><br>
+                <input type="submit" value="Submit" />
+            </fieldset>
+        </form>
+        <div id="demo"></div>
+    </body>
+</html>
