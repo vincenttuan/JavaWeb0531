@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 //@WebServlet(urlPatterns = {"/controller/upload/file", "/controller/upload/image"})
 @WebServlet("/controller/upload/*") // 後置路徑對應 * 代表任意字串(path info)
 @MultipartConfig(
@@ -16,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
         maxFileSize = 1024 * 1024 * 10,
         maxRequestSize = 1024 * 1024 * 30
 )
-public class UploadServlet extends HttpServlet{
+public class UploadServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,20 +25,29 @@ public class UploadServlet extends HttpServlet{
 
         String pathInfo = req.getPathInfo();
         resp.getWriter().print("pathInfo:" + pathInfo + "<p />");
-        
-        switch(pathInfo) {
+
+        switch (pathInfo) {
             case "/file":
                 uploadFile(req, resp);
                 break;
             case "/image":
                 uploadImage(req, resp);
-                break;    
+                break;
         }
     }
-    
+
     private void uploadFile(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getParts()
+                .stream()
+                .forEach(part -> {
+                    try {
+                        resp.getWriter().print(part.getName() + "<br />");
+                    } catch (Exception e) {
+                    }
+                });
     }
-    
+
     private void uploadImage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
     }
 }
