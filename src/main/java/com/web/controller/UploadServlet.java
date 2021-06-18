@@ -1,5 +1,6 @@
 package com.web.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -97,6 +98,21 @@ public class UploadServlet extends HttpServlet {
                         String img = "<img src='data:image/png;base64, %s'>";
                         img = String.format(img, data);
                         resp.getWriter().print(img + "<br />");
+                        
+                        // 存檔資料夾
+                        String fileSavingFolder = getServletContext().getRealPath("/upload");
+                        // 確認資料夾是否存在
+                        File folder = new File(fileSavingFolder);
+                        if(!folder.exists()) {
+                            folder.mkdir(); // 建立資料夾
+                        }
+                        // 取得檔名
+                        String fname = part.getSubmittedFileName();
+                        // 存檔路徑
+                        String fileSavingPath = fileSavingFolder + File.separator + fname;
+                        // 將檔案寫入到伺服器中
+                        part.write(fileSavingPath);
+                        
                     } catch (Exception e) {
                     }
                 });
