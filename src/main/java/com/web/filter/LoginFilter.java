@@ -39,7 +39,7 @@ public class LoginFilter extends HttpFilter {
         if (check) {
             chain.doFilter(req, res);
         } else {
-            RequestDispatcher rd = req.getRequestDispatcher("/forms/login.jsp");
+            RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/view/login.jsp");
             rd.forward(req, res);
         }
     }
