@@ -19,18 +19,20 @@
         <filter-class>com.web.filter.WatermarkFilter</filter-class>
     </filter>
     
+    <!-- 執行順序 -->
     <filter-mapping>
         <filter-name>PerformanceFiler</filter-name>
-        <url-pattern>/secure/*</url-pattern>
-    </filter-mapping>
-    <filter-mapping>
-        <filter-name>Watermark</filter-name>
         <url-pattern>/secure/*</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>Login</filter-name>
         <url-pattern>/secure/*</url-pattern>
     </filter-mapping>
+    <filter-mapping>
+        <filter-name>Watermark</filter-name>
+        <url-pattern>/secure/*</url-pattern>
+    </filter-mapping>
+    
     <!-- 宣告 Servlet -->
     
     <servlet>
