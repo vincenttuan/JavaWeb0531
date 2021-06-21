@@ -11,7 +11,7 @@ import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter(urlPatterns = {"/secure/*"})
+//@WebFilter(urlPatterns = {"/secure/*"})
 public class LoginFilter extends HttpFilter {
 
     private static Map<String, String> users = new LinkedHashMap<>();
