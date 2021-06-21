@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.servlet.FilterChain;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpFilter;
@@ -38,7 +39,8 @@ public class LoginFilter extends HttpFilter {
         if (check) {
             chain.doFilter(req, res);
         } else {
-            res.getWriter().print("Please login !");
+            RequestDispatcher rd = req.getRequestDispatcher("/forms/login.jsp");
+            rd.forward(req, res);
         }
     }
 
