@@ -39,7 +39,9 @@ public class LoginFilter extends HttpFilter {
                         .isPresent();
         
         if (check) {
+            
             chain.doFilter(req, res);
+            
         } else {
             RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/view/login.jsp");
             if(!(username==null&&password==null)) {
