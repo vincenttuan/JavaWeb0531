@@ -24,6 +24,7 @@ public class LoginFilter extends HttpFilter {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         boolean check = false;
+        // code here ...
         
         if(check) {
             chain.doFilter(req, res);
