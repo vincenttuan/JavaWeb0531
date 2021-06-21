@@ -14,7 +14,14 @@
         <filter-name>Watermark</filter-name>
         <filter-class>com.web.filter.WatermarkFilter</filter-class>
     </filter>
-    
+    <filter-mapping>
+        <filter-name>Watermark</filter-name>
+        <url-pattern>/secure/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Login</filter-name>
+        <url-pattern>/secure/*</url-pattern>
+    </filter-mapping>
     <!-- 宣告 Servlet -->
     <servlet>
         <servlet-name>HelloGenericServlet</servlet-name>
