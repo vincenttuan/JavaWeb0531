@@ -27,6 +27,8 @@ public class LoginFilter extends HttpFilter {
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
+        System.out.println("username: " + username);
+        System.out.println("password: " + password);
         boolean check = false;
         // code here ...
         check = users.entrySet()
@@ -40,6 +42,9 @@ public class LoginFilter extends HttpFilter {
             chain.doFilter(req, res);
         } else {
             RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/view/login.jsp");
+            if(!(username==null&&password==null)) {
+                req.setAttribute("errorMsg", "登入錯誤");
+            }
             rd.forward(req, res);
         }
     }

@@ -16,6 +16,8 @@
                 <input name="username" type="text" placeholder="請輸入帳號" value=""><p /> 
                 <input name="password" type="password" placeholder="請輸入密碼" value=""><p /> 
                 <p />
+                <font color='RED'>${ errorMsg }</font>
+                <p />
                 <button type="submit" class="pure-button pure-button-primary">登入</button>
                 <button type="reset" class="pure-button pure-button-primary">重置</button>
             </fieldset>
