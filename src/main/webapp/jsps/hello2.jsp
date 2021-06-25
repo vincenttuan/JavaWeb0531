@@ -11,9 +11,11 @@
 --%>
 <% int x = 100;%>
 <%! int x = 200;%>
+
 <%=x %>
 <%=this.x %>
 <% out.println(getLotto()); %>
+
 <%!
     int getLotto() {
         return new Random().nextInt(100);

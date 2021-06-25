@@ -30,7 +30,9 @@
                 out.print(list);
             %>
         </h1>
-
+        
+        <%@include file="hello2.jsp"  %>
+        
         <table class="pure-table pure-table-bordered">
             <thead>
                 <tr>
