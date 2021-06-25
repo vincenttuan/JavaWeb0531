@@ -13,19 +13,34 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
     </head>
-    <body>
+    <body style="padding: 20px">
         <h1>
             <%
                 Lotto lotto = new Lotto();
                 out.print(lotto.get539());
             %>
         </h1>
+
+        <table class="pure-table pure-table-bordered">
+            <thead>
+                <tr>
+                    <th>1<th><th>2<th><th>3<th><th>4<th><th>5<th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1<td><td>1<td><td>1<td><td>1<td><td>1<td>
+                </tr>
+            </tbody>
+
+        </table>
+
         <%
             Date now = new Date();
             SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
             out.print(sdf.format(now));
-            
         %>
     </body>
 </html>
