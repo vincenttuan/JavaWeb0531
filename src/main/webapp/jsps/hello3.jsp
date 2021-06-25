@@ -1,4 +1,5 @@
 <%@page import="com.web.job.Calc"%>
+<%@page session="false" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     
