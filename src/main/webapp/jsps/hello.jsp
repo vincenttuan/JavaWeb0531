@@ -10,6 +10,13 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    Date now = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+            
+    Lotto lotto = new Lotto();
+    List list = new ArrayList(lotto.get539());
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,8 +27,6 @@
     <body style="padding: 20px">
         <h1>
             <%
-                Lotto lotto = new Lotto();
-                List list   = new ArrayList(lotto.get539());
                 out.print(list);
             %>
         </h1>
@@ -45,8 +50,6 @@
         </table>
 
         <%
-            Date now = new Date();
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
             out.print(sdf.format(now));
         %>
     </body>
