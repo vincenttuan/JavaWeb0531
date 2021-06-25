@@ -18,7 +18,7 @@ public class LongJob implements Runnable {
             PrintWriter out = ctx.getResponse().getWriter();
             for (int i = 1; i <= 10; i++) {
                 Thread.sleep(1000);
-                out.println(i + ". 很長的工作做完了 " + new Date());
+                out.println(i + ". 很長的工作做完了 " + new Date() + "<p/>");
                 out.flush();
             }
             ctx.complete(); // 做完了
