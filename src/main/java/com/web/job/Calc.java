@@ -3,7 +3,8 @@ package com.web.job;
 public class Calc {
     private int x;
     private int y;
-
+    private int result;
+    
     public int getX() {
         return x;
     }
@@ -20,7 +21,7 @@ public class Calc {
         this.y = y;
     }
     
-    public int result() {
+    public int getResult() {
         return x + y;
     }
 }
