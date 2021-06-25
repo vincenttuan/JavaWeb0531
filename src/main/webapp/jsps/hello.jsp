@@ -4,6 +4,8 @@
     Author     : vincenttuan
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.web.job.Lotto"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
@@ -19,19 +21,24 @@
         <h1>
             <%
                 Lotto lotto = new Lotto();
-                out.print(lotto.get539());
+                List list   = new ArrayList(lotto.get539());
+                out.print(list);
             %>
         </h1>
 
         <table class="pure-table pure-table-bordered">
             <thead>
                 <tr>
-                    <th>1<th><th>2<th><th>3<th><th>4<th><th>5<th>
+                    <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1<td><td>1<td><td>1<td><td>1<td><td>1<td>
+                    <td><%=list.get(0) %></td>
+                    <td><%=list.get(1) %></td>
+                    <td><%=list.get(2) %></td>
+                    <td><%=list.get(3) %></td>
+                    <td><%=list.get(4) %></td>
                 </tr>
             </tbody>
 
