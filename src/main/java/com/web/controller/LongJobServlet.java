@@ -24,10 +24,10 @@ public class LongJobServlet extends HttpServlet {
         out.flush();
         
         // LongJob
-        AsyncContext ctx = req.getAsyncContext();
+        AsyncContext ctx = req.startAsync();
         LongJob longJob = new LongJob(ctx);
         Thread t = new Thread(longJob);
-        t.start();
+        //t.start();
         
         out.print("離開 Servlet 的時間: " + new Date() + "<p/>");
         
