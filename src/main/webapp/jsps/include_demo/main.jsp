@@ -7,11 +7,14 @@
     </head>
     <body>
         <h1>
-            <% String message = "看到 message 了";%>
+            <% String message = "I_Love_Java";%>
             <%@include file="title.jsp" %>
         </h1>
         <h1>
-            <jsp:include page="salary.jsp?x=100" />
+            <jsp:include page="salary.jsp">
+                <jsp:param name="message" value="<%=message %>" />
+            </jsp:include>
+            
         </h1>
     </body>
 </html>

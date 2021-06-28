@@ -10,6 +10,6 @@
         <h1>
             <%=new Random().nextInt(100000) %>
         </h1>
-        
+        <%=request.getParameter("message") %>
     </body>
 </html>
