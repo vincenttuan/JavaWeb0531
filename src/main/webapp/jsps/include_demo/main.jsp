@@ -12,6 +12,9 @@
             <%@include file="title.jsp" %>
         </h1>
         <h1>
+            ${header["User-Agent"]}
+        </h1>
+        <h1>
             
             <jsp:include page="salary.jsp?salary=10&salary=20">
                 <jsp:param name="message" value="<%=message %>" />
