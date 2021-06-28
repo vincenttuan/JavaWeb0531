@@ -17,5 +17,6 @@
         ${ paramValues.salary[1] } <p />
         ${ paramValues.salary[2] } <p />
         ${ paramValues.salary[3] } <p />
+        ${ paramValues.salary[0] + paramValues.salary[1] + paramValues.salary[2] + paramValues.salary[3] } <p />
     </body>
 </html>
