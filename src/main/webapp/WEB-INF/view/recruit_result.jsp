@@ -16,7 +16,28 @@
             <fieldset>
                 <legend>招聘結果</legend>
                 總人數：${ fn:length(list) }
-                
+                <p />
+                <table class="pure-table pure-table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Sex</th>
+                            <th>Score</th>
+                            <th>Pass</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach var="person" items="${ list }">
+                        <tr>
+                            <td>${ person.name }</td>
+                            <td>${ person.sex }</td>
+                            <td>${ person.score }</td>
+                            <td></td>
+                        </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+
                 <p />
                 <button type="button" onclick="window.history.back()" class="pure-button pure-button-primary">回上一頁</button>
             </fieldset>
