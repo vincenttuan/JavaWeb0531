@@ -7,10 +7,12 @@
     </head>
     <body>
         <h1>
-            <% String message = "I_Love_Java";%>
+            <%request.setCharacterEncoding("UTF-8");%>
+            <% String message = "I_Love_Java中文";%>
             <%@include file="title.jsp" %>
         </h1>
         <h1>
+            
             <jsp:include page="salary.jsp?salary=10&salary=20">
                 <jsp:param name="message" value="<%=message %>" />
                 <jsp:param name="salary" value="40000" />
