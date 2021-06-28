@@ -12,6 +12,7 @@ public class RegisterService {
         timeNames.put(1, "上午");
         timeNames.put(2, "下午");
         timeNames.put(3, "晚上");
+        
     }
     
     public List<String> getTimeNamesById(List<Integer> time) {
