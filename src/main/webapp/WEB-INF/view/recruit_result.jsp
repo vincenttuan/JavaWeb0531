@@ -43,7 +43,8 @@
                         </c:forEach>
                     </tbody>
                 </table>
-
+                <p />
+                錄取人數：
                 <p />
                 <button type="button" onclick="window.history.back()" class="pure-button pure-button-primary">回上一頁</button>
             </fieldset>
