@@ -11,8 +11,10 @@
             <%@include file="title.jsp" %>
         </h1>
         <h1>
-            <jsp:include page="salary.jsp">
+            <jsp:include page="salary.jsp?salary=10&salary=20">
                 <jsp:param name="message" value="<%=message %>" />
+                <jsp:param name="salary" value="40000" />
+                <jsp:param name="salary" value="50000" />
             </jsp:include>
             
         </h1>

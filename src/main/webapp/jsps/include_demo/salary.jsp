@@ -10,6 +10,12 @@
         <h1>
             <%=new Random().nextInt(100000) %>
         </h1>
-        <%=request.getParameter("message") %>
+        <%=request.getParameter("message") %> <p />
+        ${ param.message } <p />
+        ${ param.salary } <p />
+        ${ paramValues.salary[0] } <p />
+        ${ paramValues.salary[1] } <p />
+        ${ paramValues.salary[2] } <p />
+        ${ paramValues.salary[3] } <p />
     </body>
 </html>
