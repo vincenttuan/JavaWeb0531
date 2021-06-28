@@ -1,4 +1,6 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
     <head>
         <title>招聘結果</title>
@@ -13,7 +15,9 @@
         <form class="pure-form">
             <fieldset>
                 <legend>招聘結果</legend>
+                總人數：${ fn:length(list) }
                 
+                <p />
                 <button type="button" onclick="window.history.back()" class="pure-button pure-button-primary">回上一頁</button>
             </fieldset>
         </form>
