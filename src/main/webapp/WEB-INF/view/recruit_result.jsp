@@ -20,6 +20,7 @@
                 <table class="pure-table pure-table-bordered">
                     <thead>
                         <tr>
+                            <th>#</th>
                             <th>Name</th>
                             <th>Sex</th>
                             <th>Score</th>
@@ -27,12 +28,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="person" items="${ list }">
+                        <c:forEach var="person" items="${ list }" varStatus="item" >
                         <tr>
+                            <td>${ item.index + 1 }</td>
                             <td>${ person.name }</td>
                             <td>${ person.sex }</td>
                             <td>${ person.score }</td>
-                            <td></td>
+                            <td>
+                                <c:if test="${ person.score >= 60 }">
+                                    <c:out value="Pass" />
+                                </c:if>
+                            </td>
                         </tr>
                         </c:forEach>
                     </tbody>
