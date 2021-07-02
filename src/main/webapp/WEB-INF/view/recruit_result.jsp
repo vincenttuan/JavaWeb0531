@@ -28,6 +28,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <c:set var="amount" value="0" />
                         <c:forEach var="person" items="${ list }" varStatus="item" >
                         <tr>
                             <td>${ item.index + 1 }</td>
@@ -37,6 +38,7 @@
                             <td>
                                 <c:if test="${ person.score >= 60 }">
                                     <c:out value="Pass" />
+                                    <c:set var="amount" value="${ amount + 1 }" />
                                 </c:if>
                             </td>
                         </tr>
@@ -44,7 +46,7 @@
                     </tbody>
                 </table>
                 <p />
-                錄取人數：
+                錄取人數：${ amount }
                 <p />
                 <button type="button" onclick="window.history.back()" class="pure-button pure-button-primary">回上一頁</button>
             </fieldset>
