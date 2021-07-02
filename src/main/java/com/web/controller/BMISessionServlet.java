@@ -16,7 +16,7 @@ public class BMISessionServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         
-        HttpSession session = req.getSession();
+        HttpSession session = req.getSession(true);
         String cname  = req.getParameter("cname");
         Double height = Double.parseDouble(req.getParameter("height"));
         Double weight = Double.parseDouble(req.getParameter("weight"));
