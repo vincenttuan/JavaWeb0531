@@ -139,7 +139,7 @@ public class Util {
         // 干擾線條
         Random random = new Random();
         g.setColor(Color.BLUE);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             int x = random.nextInt(80);
             int y = random.nextInt(30);
             int x2 = random.nextInt(80);
