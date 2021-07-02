@@ -20,7 +20,10 @@
                         class="pure-button pure-button-primary">傳送</button>
                 <button type="button" 
                         onclick="location.href='/JavaWeb0531/controller/bmi_session'"
-                        class="pure-button pure-button-primary">檢視</button>        
+                        class="pure-button pure-button-primary">檢視</button>
+                <button type="button" 
+                        onclick="location.href='/JavaWeb0531/controller/bmi_session_invalid'"
+                        class="pure-button pure-button-primary">刪除 Session</button>        
             </fieldset>
         </form>
         
