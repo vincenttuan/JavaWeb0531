@@ -17,6 +17,7 @@ public class SessionCountListener implements HttpSessionListener {
         int count = Integer.parseInt(application.getAttribute("count").toString());
         count++;
         application.setAttribute("count", count);
+        System.out.println("sessionCreated: " + count);
     }
 
     @Override
@@ -28,6 +29,7 @@ public class SessionCountListener implements HttpSessionListener {
         int count = Integer.parseInt(application.getAttribute("count").toString());
         count--;
         application.setAttribute("count", count);
+        System.out.println("sessionDestroyed: " + count);
     }
     
 }
