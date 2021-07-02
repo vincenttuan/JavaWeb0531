@@ -17,7 +17,7 @@ public class BMISessionServlet extends HttpServlet {
             throws ServletException, IOException {
         
         HttpSession session = req.getSession(true);
-        session.setMaxInactiveInterval(15);
+        //session.setMaxInactiveInterval(15);
         
         String cname  = req.getParameter("cname");
         Double height = Double.parseDouble(req.getParameter("height"));
