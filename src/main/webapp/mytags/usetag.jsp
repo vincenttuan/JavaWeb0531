@@ -30,6 +30,19 @@
         <h1>
             <my:implicit attributeName="authCode" scopeName="session" />
         </h1>
-        
+        <!-- case 1 印出 男生, case 2 印出 女, 其他 印出 錯誤 -->
+        <h1>
+            <my:switch conditionValue="1">
+                <my:case caseValue="1">
+                    男生
+                </my:case>
+                <my:case caseValue="2">
+                    女生
+                </my:case>
+                <my:default>
+                    錯誤
+                </my:default>    
+            </my:switch>
+        </h1>
     </body>
 </html>
