@@ -17,5 +17,10 @@
                 現在時間：<%=new Date() %>
             </my:if>
         </h1>
+        <h1>
+            <my:loop count="3">
+                Java
+            </my:loop>
+        </h1>
     </body>
 </html>
