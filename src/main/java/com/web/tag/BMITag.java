@@ -59,7 +59,7 @@ public class BMITag implements Tag {
             out.print(String.format("h=%.1f w=%.1f bmi=%.2f ", h, w, bmi));
             if(result!=null && result) {
                 out.print("result=");
-                if(bmi >= 18) {
+                if(bmi <= 18) {
                     out.print("太瘦");
                 } else if(bmi > 23) {
                     out.print("太胖");
