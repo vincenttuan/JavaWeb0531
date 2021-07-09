@@ -11,5 +11,17 @@
         <body-content>empty</body-content>
         <description>晚安 現在時刻: ...</description>
     </tag>
-  
+    
+    <!-- Welcome tag -->
+    <tag>
+        <name>welcome</name>
+        <tag-class>com.web.tag.WelcomeTag</tag-class>
+        <body-content>JSP</body-content>
+        <description>welcome xxx</description>
+        <attribute>
+            <name>username</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
 </taglib>
