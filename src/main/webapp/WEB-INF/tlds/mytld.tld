@@ -24,4 +24,27 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>
+    
+    <!-- BMI tag -->
+    <tag>
+        <name>bmi</name>
+        <tag-class>com.web.tag.BMITag</tag-class>
+        <body-content>empty</body-content>
+        <description>bmi xxx</description>
+        <attribute>
+            <name>h</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>w</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>result</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
 </taglib>
