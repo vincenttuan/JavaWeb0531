@@ -48,16 +48,24 @@ public class ExchangeTag implements Tag {
         try {
             if (symbol != null && symbol.length() == 8) {
                 Stock stock = YahooFinance.get(symbol);
-                double price = stock.getQuote().getPrice().doubleValue();
-                out.print("1 ");
-                out.print(symbol.substring(0, 3) + " ");
-                out.print(price + " ");
-                out.print(symbol.substring(3, 6) + "<p/>");
+                if (stock != null) {
+                    double price = stock.getQuote().getPrice().doubleValue();
+                    out.print("1 ");
+                    out.print(symbol.substring(0, 3) + " ");
+                    out.print(price + " ");
+                    out.print(symbol.substring(3, 6) + "<p/>");
+                } else {
+                    out.print("無此匯率商品資料: " + symbol);
+                }
             } else {
                 out.print("symbol 格式錯誤: " + symbol);
             }
 
         } catch (Exception e) {
+            try {
+                out.print("Exception: " + e);
+            } catch (Exception e2) {
+            }
         }
         return Tag.SKIP_BODY;
     }
