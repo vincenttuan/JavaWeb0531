@@ -8,7 +8,7 @@ import javax.servlet.jsp.tagext.Tag;
 /*
 Tag:
   <my:welcome username="John">
-     現在時刻：<%=new Date() >
+     現在時刻：<%=new Date() %>
   </my:welcome>
 OUTPUT:
   歡迎 John 的光臨
