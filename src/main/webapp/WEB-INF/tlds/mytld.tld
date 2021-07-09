@@ -76,7 +76,7 @@
     
     <!-- Lotto tag -->
     <tag>
-        <name>loop</name>
+        <name>lotto</name>
         <tag-class>com.web.tag.LottoTag</tag-class>
         <body-content>JSP</body-content>
         <description>loop xxx</description>
