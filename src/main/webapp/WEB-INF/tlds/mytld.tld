@@ -73,4 +73,17 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>
+    
+    <!-- Lotto tag -->
+    <tag>
+        <name>loop</name>
+        <tag-class>com.web.tag.LottoTag</tag-class>
+        <body-content>JSP</body-content>
+        <description>loop xxx</description>
+        <attribute>
+            <name>count</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
 </taglib>
