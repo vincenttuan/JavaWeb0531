@@ -12,40 +12,51 @@ import javax.servlet.jsp.tagext.Tag;
 結果: Java Java Java
  */
 public class LoopTag implements IterationTag {
-
+    private PageContext pageContext;
+    private Tag parentTag;
+    private Integer count;
+    
     @Override
     public void setPageContext(PageContext pc) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        pageContext = pc;
     }
 
     @Override
     public void setParent(Tag t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        parentTag = t;
     }
 
     @Override
     public Tag getParent() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return parentTag;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
     }
 
     @Override
     public int doStartTag() throws JspException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return Tag.EVAL_BODY_INCLUDE;
     }
 
     @Override
     public int doAfterBody() throws JspException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        --count;
+        if(count == 0) {
+            return Tag.SKIP_BODY;
+        }
+        return IterationTag.EVAL_BODY_AGAIN;
     }
 
     @Override
     public int doEndTag() throws JspException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return Tag.EVAL_PAGE;
     }
 
     @Override
     public void release() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
     }
 
 }
