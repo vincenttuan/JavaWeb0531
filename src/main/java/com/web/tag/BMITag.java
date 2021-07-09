@@ -16,8 +16,8 @@ OUTPUT:
 public class BMITag implements Tag {
     private PageContext pageContext;
     private Tag parentTag;
-    private double h, w;
-    private boolean result;
+    private Double h, w;
+    private Boolean result;
     @Override
     public void setPageContext(PageContext pc) {
         pageContext = pc;
@@ -33,15 +33,15 @@ public class BMITag implements Tag {
         return parentTag;
     }
 
-    public void setH(double h) {
+    public void setH(Double h) {
         this.h = h;
     }
 
-    public void setW(double w) {
+    public void setW(Double w) {
         this.w = w;
     }
 
-    public void setResult(boolean result) {
+    public void setResult(Boolean result) {
         this.result = result;
     }
 
@@ -57,7 +57,7 @@ public class BMITag implements Tag {
         try {
             JspWriter out = pageContext.getOut();
             out.print(String.format("h=%.1f w=%.1f bmi=%.2f ", h, w, bmi));
-            if(result) {
+            if(result!=null && result) {
                 out.print("result=");
                 if(bmi >= 18) {
                     out.print("太瘦");
