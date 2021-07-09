@@ -47,4 +47,17 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>
+    
+    <!-- Exchange tag -->
+    <tag>
+        <name>exchange</name>
+        <tag-class>com.web.tag.ExchangeTag</tag-class>
+        <body-content>JSP</body-content>
+        <description>welcome xxx</description>
+        <attribute>
+            <name>symbol</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
 </taglib>
