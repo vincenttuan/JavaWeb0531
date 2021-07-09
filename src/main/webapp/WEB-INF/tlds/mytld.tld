@@ -86,4 +86,17 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>
+    
+    <!-- Search tag -->
+    <tag>
+        <name>search</name>
+        <tag-class>com.web.tag.SearchTag</tag-class>
+        <body-content>JSP</body-content>
+        <description>search xxx</description>
+        <attribute>
+            <name>key</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
 </taglib>
