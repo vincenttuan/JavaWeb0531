@@ -1,6 +1,7 @@
 package com.web.tag;
 
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.Tag;
 
@@ -38,17 +39,22 @@ public class WelcomeTag implements Tag {
     
     @Override
     public int doStartTag() throws JspException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        JspWriter out = pageContext.getOut();
+        try {
+            out.println("歡迎 " + username + " 的光臨");
+        } catch (Exception e) {
+        }
+        return Tag.EVAL_BODY_INCLUDE;
     }
 
     @Override
     public int doEndTag() throws JspException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return Tag.EVAL_PAGE;
     }
 
     @Override
     public void release() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }
