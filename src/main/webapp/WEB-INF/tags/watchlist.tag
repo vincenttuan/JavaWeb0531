@@ -1,5 +1,7 @@
 <%@tag description="put the tag description here" pageEncoding="UTF-8"%>
 <%@attribute name="symbol" required="true" rtexprvalue="true"%>
+<jsp:useBean class="com.web.tag.utils.MyStock" id="myStock" />
+<jsp:setProperty name="myStock" property="symbol" value="${ symbol }" />
 <table class="pure-table">
     <thead>
         <tr>
@@ -12,9 +14,9 @@
     <tbody>
         <tr>
             <td>${ symbol }</td>
-            <td>Honda</td>
-            <td>Accord</td>
-            <td>2009</td>
+            <td>${ myStock.name }</td>
+            <td>${ myStock.price }</td>
+            <td>${ myStock.change }</td>
         </tr>
     </tbody>
 </table>

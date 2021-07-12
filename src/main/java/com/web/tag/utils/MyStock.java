@@ -1,6 +1,5 @@
 package com.web.tag.utils;
 
-import java.math.BigDecimal;
 import yahoofinance.Stock;
 import yahoofinance.YahooFinance;
 
@@ -65,5 +64,6 @@ public class MyStock {
     public void setColor(String color) {
         this.color = color;
     }
+
 
 }
