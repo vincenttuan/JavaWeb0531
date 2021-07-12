@@ -10,8 +10,6 @@
     </head>
     <body>
         <h1>
-        </h1>
-        <h1>
             <my:circleArea r="10" mode="1" />
         </h1>
         <h1>
