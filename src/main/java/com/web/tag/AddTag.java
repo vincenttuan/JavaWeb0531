@@ -3,14 +3,15 @@ package com.web.tag;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.DynamicAttributes;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 /*
-<my:add x=1 y=2 />
-<my:add x=1 y=2 z=3 ... />
+<my:add x="10.5" y="20" />
+<my:add x="10.5" y="20" z = "30.5" />
 */
 public class AddTag extends SimpleTagSupport 
                     implements DynamicAttributes {
@@ -24,7 +25,9 @@ public class AddTag extends SimpleTagSupport
     @Override
     public void doTag() throws JspException, IOException {
         JspWriter out = getJspContext().getOut();
-        double sum = 0.0;
+        double sum = map.entrySet()
+                .stream()
+                .mapToDouble(Entry::getValue).sum();
         out.println(sum);
     }
     
