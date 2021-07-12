@@ -10,6 +10,6 @@
         <title>Watch List</title>
     </head>
     <body style="padding: 15px">
-        <my:watchlist />
+        <my:watchlist symbol="2330.TW" />
     </body>
 </html>
