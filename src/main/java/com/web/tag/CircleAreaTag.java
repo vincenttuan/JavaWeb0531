@@ -25,7 +25,7 @@ public class CircleAreaTag extends SimpleTagSupport {
                 result = 4/3 * (Math.pow(r, 3) * Math.PI);
                 break;    
         }
-        out.println(String.format("r= %.1f model= %d area= %.2f", r, mode, result));
+        out.println(String.format("r= %.1f model= %d area= %,.2f", r, mode, result));
     }
     
     public double getR() {
