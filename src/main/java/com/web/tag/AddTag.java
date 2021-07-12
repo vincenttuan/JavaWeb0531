@@ -28,6 +28,7 @@ public class AddTag extends SimpleTagSupport
         double sum = map.entrySet()
                 .stream()
                 .mapToDouble(Entry::getValue).sum();
+                           //(e -> e.getValue())
         out.println(sum);
     }
     
