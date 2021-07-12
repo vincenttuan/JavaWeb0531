@@ -15,8 +15,8 @@
         <tr>
             <td>${ symbol }</td>
             <td>${ myStock.name }</td>
-            <td>${ myStock.price }</td>
-            <td>${ myStock.change }</td>
+            <td style="color: ${ myStock.color }">${ myStock.price }</td>
+            <td style="color: ${ myStock.color }">${ myStock.change }</td>
         </tr>
     </tbody>
 </table>

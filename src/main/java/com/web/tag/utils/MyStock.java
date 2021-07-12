@@ -4,7 +4,9 @@ import yahoofinance.Stock;
 import yahoofinance.YahooFinance;
 
 public class MyStock {
-
+    private static final String RED = "#FF0000";
+    private static final String GREEN = "#005100";
+    private static final String BLACK = "#000000";
     private String symbol;
     private String name;
     private Double price;
@@ -29,6 +31,7 @@ public class MyStock {
             this.name = stock.getName();
             this.price = stock.getQuote().getPrice().doubleValue();
             this.change = stock.getQuote().getChangeInPercent().doubleValue();
+            this.color = (this.change > 0) ? RED : (this.change < 0) ? GREEN : BLACK;
         } catch (Exception e) {
         }
     }
