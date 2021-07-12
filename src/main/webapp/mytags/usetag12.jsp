@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
-        <my:piechart work="9" />
-    </body>
+    
+        <my:piechart work="9" is3d="true" />
+    
 </html>
