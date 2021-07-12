@@ -10,6 +10,6 @@
         <title>Watch List</title>
     </head>
     <body style="padding: 15px">
-        <my:watchlist symbol="${ param.symbol }" />
+        <my:watchlist symbols="${ param.symbols }" />
     </body>
 </html>
