@@ -117,4 +117,13 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>
+    
+    <!-- Add tag -->
+    <tag>
+        <name>add</name>
+        <tag-class>com.web.tag.AddTag</tag-class>
+        <body-content>empty</body-content>
+        <description>add xxx</description>
+        <dynamic-attributes>true</dynamic-attributes>
+    </tag>
 </taglib>
