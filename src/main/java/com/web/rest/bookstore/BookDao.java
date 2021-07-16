@@ -40,7 +40,7 @@ public class BookDao {
         return true;
     }
     
-    // 修改
+    // 刪除
     public static boolean deleteBook(Integer id) {
         // 是否庫存中有此筆資料 ?
         Book oBook = getBook(id);
