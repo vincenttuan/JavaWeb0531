@@ -47,7 +47,7 @@ public class BookService {
             URI location = URI.create("http://localhost:8080/JavaWeb0531/forms/rest_book.jsp");
             return Response.temporaryRedirect(location).build();
         } else {
-            return Response.status(500, "create error").build();
+            return Response.status(500).build();
         }
         //return BookDao.createBook(book).toString();
     }
