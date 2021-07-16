@@ -50,4 +50,14 @@
         <servlet-name>HelloHttpServlet</servlet-name>
     </servlet-mapping>
     
+    <!-- 將 POST 轉換為 PUT 或 DELETE 的請求 (表單要加入 hidden 欄位 _method -->
+    <filter>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <url-pattern>/rest/*</url-pattern>
+    </filter-mapping>
+    
 </web-app>
