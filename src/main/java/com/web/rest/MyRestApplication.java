@@ -12,7 +12,7 @@ public class MyRestApplication extends Application {
     public Set<Class<?>> getClasses() {
         // 註冊 Rest service
         Set<Class<?>> classes = new LinkedHashSet();
-        
+        classes.add(HelloService.class);
         return classes;
         
     }
