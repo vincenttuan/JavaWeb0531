@@ -3,6 +3,7 @@ package com.web.rest;
 import com.web.rest.bookstore.Book;
 import com.web.rest.bookstore.BookDao;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -51,6 +52,14 @@ public class BookService {
                              @FormParam("price") Integer price) {
         Book book = new Book(id, name, price);
         return BookDao.updateBook(id, book).toString();
+    }
+    
+    @Path("/")
+    @DELETE
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.TEXT_PLAIN)
+    public String deleteBook(@FormParam("id") Integer id) {
+        return BookDao.deleteBook(id).toString();
     }
 
     
