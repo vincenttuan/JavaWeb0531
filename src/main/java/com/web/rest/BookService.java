@@ -42,10 +42,13 @@ public class BookService {
                              @FormParam("name") String name,
                              @FormParam("price") Integer price) {
         Book book = new Book(id, name, price);
-        BookDao.createBook(book);
-        // 重導指定頁面
-        URI location = URI.create("http://localhost:8080/JavaWeb0531/forms/rest_book.jsp");
-        return Response.temporaryRedirect(location).build();
+        if(BookDao.createBook(book)) {
+            // 重導指定頁面
+            URI location = URI.create("http://localhost:8080/JavaWeb0531/forms/rest_book.jsp");
+            return Response.temporaryRedirect(location).build();
+        } else {
+            return Response.status(500, "create error").build();
+        }
         //return BookDao.createBook(book).toString();
     }
     
