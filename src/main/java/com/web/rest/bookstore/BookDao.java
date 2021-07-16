@@ -23,7 +23,11 @@ public class BookDao {
     
     // 新增
     public static Boolean createBook(Book book) {
-        if(getBook(book.getId()) == null) {
+        boolean flag = books.stream()
+                .filter(b -> b.getId() == book.getId())
+                .findAny()
+                .isPresent();
+        if(flag == false) {
             books.add(book);
             return true;
         }
