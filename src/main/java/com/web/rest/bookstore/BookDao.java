@@ -22,13 +22,13 @@ public class BookDao {
     } 
     
     // 新增
-    public static boolean createBook(Book book) {
+    public static Boolean createBook(Book book) {
         books.add(book);
         return true;
     }
     
     // 修改
-    public static boolean updateBook(Integer id, Book book) {
+    public static Boolean updateBook(Integer id, Book book) {
         // 是否庫存中有此筆資料 ?
         Book oBook = getBook(id);
         if(oBook == null) {
@@ -41,7 +41,7 @@ public class BookDao {
     }
     
     // 刪除
-    public static boolean deleteBook(Integer id) {
+    public static Boolean deleteBook(Integer id) {
         // 是否庫存中有此筆資料 ?
         Book oBook = getBook(id);
         if(oBook == null) {
