@@ -13,6 +13,7 @@ public class MyRestApplication extends Application {
         // 註冊 Rest service
         Set<Class<?>> classes = new LinkedHashSet();
         classes.add(HelloService.class);
+        classes.add(BMIService.class);
         return classes;
         
     }

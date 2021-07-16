@@ -1,5 +1,6 @@
 package com.web.rest;
 
+import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -23,7 +24,7 @@ public class HelloService {
     @GET
     @Produces("text/plain")
     public String helloId(@PathParam("id") Integer id, 
-                          @QueryParam("score") Integer score) {
+                          @DefaultValue("0") @QueryParam("score") Integer score) {
         return "Hello id = " + id + " score = " + score;
     }
 }
