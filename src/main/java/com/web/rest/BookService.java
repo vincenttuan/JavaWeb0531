@@ -2,6 +2,7 @@ package com.web.rest;
 
 import com.web.rest.bookstore.Book;
 import com.web.rest.bookstore.BookDao;
+import java.net.URI;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
@@ -14,6 +15,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 @Path("/book")
 public class BookService {
@@ -36,11 +38,15 @@ public class BookService {
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_PLAIN)
-    public String createBook(@FormParam("id") Integer id, 
+    public Response createBook(@FormParam("id") Integer id, 
                              @FormParam("name") String name,
                              @FormParam("price") Integer price) {
         Book book = new Book(id, name, price);
-        return BookDao.createBook(book).toString();
+        BookDao.createBook(book);
+        // 重導指定頁面
+        URI location = URI.create("http://localhost:8080/JavaWeb0531/forms/rest_book.jsp");
+        return Response.temporaryRedirect(location).build();
+        //return BookDao.createBook(book).toString();
     }
     
     @Path("/")
