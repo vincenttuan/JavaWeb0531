@@ -23,8 +23,11 @@ public class BookDao {
     
     // 新增
     public static Boolean createBook(Book book) {
-        books.add(book);
-        return true;
+        if(getBook(book.getId()) == null) {
+            books.add(book);
+            return true;
+        }
+        return false;
     }
     
     // 修改
