@@ -36,6 +36,7 @@
                       method="post" action="/JavaWeb0531/rest/book">
                     <fieldset>
                         <legend>Rest Book PUT</legend>
+                        <input name="_method" type="hidden" value="PUT" />
                         <input name="id" type="text" placeholder="id"><p /> 
                         <input name="name" type="text" placeholder="名稱"><p /> 
                         <input name="price" type="text" placeholder="價格"><p />
@@ -51,6 +52,7 @@
                       method="post" action="/JavaWeb0531/rest/book">
                     <fieldset>
                         <legend>Rest Book Delete</legend>
+                        <input name="_method" type="hidden" value="DELETE" />
                         <input name="id" type="text" placeholder="id"><p /> 
                         <p />
                         <button type="submit" 
