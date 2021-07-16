@@ -11,7 +11,7 @@
         <form class="pure-form">
             <fieldset>
                 <legend>Rest Book List</legend>
-                <%=BookDao.books %>
+                ${ BookDao.books }
             </fieldset>
         </form>
             
