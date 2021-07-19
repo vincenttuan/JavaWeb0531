@@ -12,9 +12,11 @@
             function updateBook(base64str) {
                 console.log(base64str);
                 console.log(atob(base64str));
-                //document.getElementById('uId').value = book.id;
-                //document.getElementById('uName').value = book.name;
-                //document.getElementById('uPrice').value = book.price;
+                var jsonStr = atob(base64str);
+                var book = JSON.parse(jsonStr);
+                document.getElementById('uId').value = book.id;
+                document.getElementById('uName').value = book.name;
+                document.getElementById('uPrice').value = book.price;
             }
             
             function deleteBook(id) {
