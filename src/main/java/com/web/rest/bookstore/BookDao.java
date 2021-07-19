@@ -7,13 +7,7 @@ public class BookDao {
     
     // 書籍資料庫
     public static List<Book> books = new ArrayList<>();
-    static {
-        books.add(new Book(1, "Java", 100));
-        books.add(new Book(2, "Python", 80));
-        books.add(new Book(3, "Go", 90));
-        books.add(new Book(4, "中文", 80));
-        
-    }
+    
     // 多筆查詢
     public static List<Book> getBooks() {
         return books;
