@@ -18,6 +18,8 @@
                             <th>id</th>
                             <th>name</th>
                             <th>price</th>
+                            <th>修改</th>
+                            <th>刪除</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -26,6 +28,12 @@
                                 <td>${ book.id }</td>
                                 <td>${ book.name }</td>
                                 <td>${ book.price }</td>
+                                <td>
+                                    <button type="button" class="pure-button pure-button-primary">修改</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="pure-button pure-button-primary">刪除</button>
+                                </td>
                             </tr>
                         </c:forEach>
                     </tbody>
