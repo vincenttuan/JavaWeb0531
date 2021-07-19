@@ -7,6 +7,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Book</title>
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
+        <script>
+            function updateBook(id, name, price) {
+                document.getElementById('uId').value = id;
+                document.getElementById('uName').value = name;
+                document.getElementById('uPrice').value = price;
+            }
+            
+            function deleteBook(id) {
+                document.getElementById('dId').value = id;
+            }
+        </script>
     </head>
     <body style="padding: 20px">
         <form class="pure-form">
