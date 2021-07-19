@@ -1,5 +1,6 @@
-<%@page import="com.web.rest.bookstore.BookDao"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="com.web.rest.bookstore.BookDao"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,7 +12,24 @@
         <form class="pure-form">
             <fieldset>
                 <legend>Rest Book List</legend>
-                ${ BookDao.books }
+                <table class="pure-table pure-table-bordered">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>name</th>
+                            <th>price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach var="book" items="${ BookDao.getBooks() }">
+                            <tr>
+                                <td>${ book.id }</td>
+                                <td>${ book.name }</td>
+                                <td>${ book.price }</td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
             </fieldset>
         </form>
 
