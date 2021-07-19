@@ -29,10 +29,14 @@
                                 <td>${ book.name }</td>
                                 <td>${ book.price }</td>
                                 <td>
-                                    <button type="button" class="pure-button pure-button-primary">修改</button>
+                                    <button type="button" 
+                                            onclick="updateBook(${ book.id }, '${ book.name }', ${ book.price })"
+                                            class="pure-button pure-button-primary">修改</button>
                                 </td>
                                 <td>
-                                    <button type="button" class="pure-button pure-button-primary">刪除</button>
+                                    <button type="button" 
+                                            onclick="deleteBook(${ book.id })"
+                                            class="pure-button pure-button-primary">刪除</button>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -63,9 +67,9 @@
                     <fieldset>
                         <legend>Rest Book PUT</legend>
                         <input name="_method" type="hidden" value="PUT" />
-                        <input name="id" type="text" placeholder="id"><p /> 
-                        <input name="name" type="text" placeholder="名稱"><p /> 
-                        <input name="price" type="text" placeholder="價格"><p />
+                        <input id="uId" name="id" type="text" placeholder="id"><p /> 
+                        <input id="uName" name="name" type="text" placeholder="名稱"><p /> 
+                        <input id="uPrice" name="price" type="text" placeholder="價格"><p />
                         <p />
                         <button type="submit" 
                                 class="pure-button pure-button-primary">修改</button>
@@ -79,7 +83,7 @@
                     <fieldset>
                         <legend>Rest Book Delete</legend>
                         <input name="_method" type="hidden" value="DELETE" />
-                        <input name="id" type="text" placeholder="id"><p /> 
+                        <input id="dId" name="id" type="text" placeholder="id"><p /> 
                         <p />
                         <button type="submit" 
                                 class="pure-button pure-button-primary">刪除</button>
