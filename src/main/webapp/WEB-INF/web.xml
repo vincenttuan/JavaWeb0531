@@ -5,7 +5,6 @@
             30
         </session-timeout>
     </session-config>
-    
     <!-- 宣告 Filter -->
     <filter>
         <filter-name>PerformanceFilter</filter-name>
@@ -19,7 +18,6 @@
         <filter-name>Watermark</filter-name>
         <filter-class>com.web.filter.WatermarkFilter</filter-class>
     </filter>
-    
     <!-- 執行順序 -->
     <filter-mapping>
         <filter-name>PerformanceFilter</filter-name>
@@ -33,37 +31,6 @@
         <filter-name>Watermark</filter-name>
         <url-pattern>/secure/*</url-pattern>
     </filter-mapping>
-    
-    <!-- 將 POST 轉換為 PUT 或 DELETE 的請求 (表單要加入 hidden 欄位 _method -->
-    <filter>
-        <filter-name>HiddenHttpMethodFilter</filter-name>
-        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>HiddenHttpMethodFilter</filter-name>
-        <url-pattern>/rest/*</url-pattern>
-    </filter-mapping>
-    
-    
-    
-    <!-- 宣告 Servlet -->
-    <servlet>
-        <servlet-name>HelloGenericServlet</servlet-name>
-        <servlet-class>com.web.controller.HelloGenericServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>HelloHttpServlet</servlet-name>
-        <servlet-class>com.web.controller.HelloHttpServlet</servlet-class>
-    </servlet>
-    <!-- Servlet 給 Client url 對應配置 -->
-    <servlet-mapping>
-        <url-pattern>/hi</url-pattern>
-        <servlet-name>HelloGenericServlet</servlet-name>
-    </servlet-mapping>
-    <servlet-mapping>
-        <url-pattern>/hello</url-pattern>
-        <servlet-name>HelloHttpServlet</servlet-name>
-    </servlet-mapping>
     
     <!-- 解決中文問題的 Filter -->
     <filter>
@@ -84,4 +51,33 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!-- 宣告 Servlet -->
+    <servlet>
+        <servlet-name>HelloGenericServlet</servlet-name>
+        <servlet-class>com.web.controller.HelloGenericServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HelloHttpServlet</servlet-name>
+        <servlet-class>com.web.controller.HelloHttpServlet</servlet-class>
+    </servlet>
+    <!-- Servlet 給 Client url 對應配置 -->
+    <servlet-mapping>
+        <url-pattern>/hi</url-pattern>
+        <servlet-name>HelloGenericServlet</servlet-name>
+    </servlet-mapping>
+    <servlet-mapping>
+        <url-pattern>/hello</url-pattern>
+        <servlet-name>HelloHttpServlet</servlet-name>
+    </servlet-mapping>
+    
+    <!-- 將 POST 轉換為 PUT 或 DELETE 的請求 (表單要加入 hidden 欄位 _method -->
+    <filter>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <url-pattern>/rest/*</url-pattern>
+    </filter-mapping>
+    
 </web-app>
