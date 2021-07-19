@@ -1,5 +1,7 @@
 package com.web.rest.bookstore;
 
+import com.google.gson.Gson;
+import java.util.Base64;
 import java.util.Objects;
 
 public class Book {
@@ -79,7 +81,12 @@ public class Book {
     
     @Override
     public String toString() {
-        return "Book{" + "id=" + id + ", name=" + name + ", price=" + price + '}';
+        String json = new Gson().toJson(this);
+        try {
+            return Base64.getEncoder().encodeToString(json.getBytes("UTF-8"));
+        } catch (Exception e) {
+            return null;
+        }
     }
     
 }

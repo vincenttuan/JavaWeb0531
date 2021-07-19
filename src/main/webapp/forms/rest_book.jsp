@@ -8,10 +8,10 @@
         <title>Book</title>
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
         <script>
-            function updateBook(id, name, price) {
-                document.getElementById('uId').value = id;
-                document.getElementById('uName').value = name;
-                document.getElementById('uPrice').value = price;
+            function updateBook(book) {
+                document.getElementById('uId').value = book.id;
+                document.getElementById('uName').value = book.name;
+                document.getElementById('uPrice').value = book.price;
             }
             
             function deleteBook(id) {
@@ -41,7 +41,7 @@
                                 <td>${ book.price }</td>
                                 <td>
                                     <button type="button" 
-                                            onclick="updateBook(${ book.id }, '${ book.name }', ${ book.price })"
+                                            onclick="updateBook(${ book })"
                                             class="pure-button pure-button-primary">修改</button>
                                 </td>
                                 <td>
