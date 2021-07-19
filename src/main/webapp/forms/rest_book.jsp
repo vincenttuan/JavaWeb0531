@@ -11,8 +11,8 @@
             // 較新的瀏覽器中已經有提供btoa和atob兩個全域函式，可以用來做base64的encode和decode
             function updateBook(base64str) {
                 console.log(base64str);
-                console.log(atob(base64str));
-                var jsonStr = atob(base64str);
+                console.log(atou(base64str));
+                var jsonStr = atou(base64str);
                 var book = JSON.parse(jsonStr);
                 document.getElementById('uId').value = book.id;
                 document.getElementById('uName').value = book.name;
@@ -21,6 +21,16 @@
             
             function deleteBook(id) {
                 document.getElementById('dId').value = id;
+            }
+            
+            // 使用 utf-8 進行編碼 base64
+            function utoa(str) {
+                return window.btoa(unescape(encodeURIComponent(str)));
+            }
+            
+            // 使用 utf-8 進行解析 base64
+            function atou(str) {
+                return decodeURIComponent(escape(window.atob(str)));
             }
         </script>
     </head>
