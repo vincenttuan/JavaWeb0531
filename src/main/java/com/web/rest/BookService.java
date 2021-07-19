@@ -56,19 +56,31 @@ public class BookService {
     @PUT
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_PLAIN)
-    public String updateBook(@FormParam("id") Integer id, 
+    public Response updateBook(@FormParam("id") Integer id, 
                              @FormParam("name") String name,
                              @FormParam("price") Integer price) {
         Book book = new Book(id, name, price);
-        return BookDao.updateBook(id, book).toString();
+        if(BookDao.updateBook(id, book)) {
+            // 重導指定頁面
+            URI location = URI.create("http://localhost:8080/JavaWeb0531/forms/rest_book.jsp");
+            return Response.temporaryRedirect(location).build();
+        } else {
+            return Response.status(500).build();
+        }
     }
     
     @Path("/")
     @DELETE
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_PLAIN)
-    public String deleteBook(@FormParam("id") Integer id) {
-        return BookDao.deleteBook(id).toString();
+    public Response deleteBook(@FormParam("id") Integer id) {
+        if(BookDao.deleteBook(id)) {
+            // 重導指定頁面
+            URI location = URI.create("http://localhost:8080/JavaWeb0531/forms/rest_book.jsp");
+            return Response.temporaryRedirect(location).build();
+        } else {
+            return Response.status(500).build();
+        }
     }
 
     
