@@ -83,7 +83,7 @@
                     <fieldset>
                         <legend>Rest Book PUT</legend>
                         <input name="_method" type="hidden" value="PUT" />
-                        <input id="uId" name="id" type="text" placeholder="id"><p /> 
+                        <input id="uId" name="id" type="text" placeholder="id" readonly><p /> 
                         <input id="uName" name="name" type="text" placeholder="名稱"><p /> 
                         <input id="uPrice" name="price" type="text" placeholder="價格"><p />
                         <p />
@@ -99,7 +99,7 @@
                     <fieldset>
                         <legend>Rest Book Delete</legend>
                         <input name="_method" type="hidden" value="DELETE" />
-                        <input id="dId" name="id" type="text" placeholder="id"><p /> 
+                        <input id="dId" name="id" type="text" placeholder="id" readonly><p /> 
                         <p />
                         <button type="submit" 
                                 class="pure-button pure-button-primary">刪除</button>
