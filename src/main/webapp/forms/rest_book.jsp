@@ -7,7 +7,38 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Book</title>
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
-        <script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <script type="text/javascript">
+            google.charts.load('current', {'packages': ['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+
+                var data = google.visualization.arrayToDataTable([
+                    ['Task', 'Hours per Day'],
+                    ['Work', 11],
+                    ['Eat', 2],
+                    ['Commute', 2],
+                    ['Watch TV', 2],
+                    ['Sleep', 7]
+                ]);
+
+                var options = {
+                    title: 'My Daily Activities'
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                chart.draw(data, options);
+            }
+        </script>
+
+        <script type="text/javascript">
+            function deleteConfirm() {
+                var value = window.confirm('是否要刪除 ?');
+                return value;
+            }
             // 較新的瀏覽器中已經有提供btoa和atob兩個全域函式，可以用來做base64的encode和decode
             function updateBook(base64str) {
                 console.log(base64str);
@@ -19,16 +50,16 @@
                 document.getElementById('uPrice').value = book.price;
                 document.getElementById('uAmount').value = book.amount;
             }
-            
+
             function deleteBook(id) {
                 document.getElementById('dId').value = id;
             }
-            
+
             // 使用 utf-8 進行編碼 base64
             function utoa(str) {
                 return window.btoa(unescape(encodeURIComponent(str)));
             }
-            
+
             // 使用 utf-8 進行解析 base64
             function atou(str) {
                 return decodeURIComponent(escape(window.atob(str)));
@@ -36,43 +67,58 @@
         </script>
     </head>
     <body style="padding: 20px">
-        <form class="pure-form">
-            <fieldset>
-                <legend>Rest Book List</legend>
-                <table class="pure-table pure-table-bordered">
-                    <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>name</th>
-                            <th>price</th>
-                            <th>amount</th>
-                            <th>修改</th>
-                            <th>刪除</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach var="book" items="${ BookDao.getBooks() }">
-                            <tr>
-                                <td>${ book.id }</td>
-                                <td>${ book.name }</td>
-                                <td>${ book.price }</td>
-                                <td>${ book.amount }</td>
-                                <td>
-                                    <button type="button" 
-                                            onclick="updateBook('${ book }')"
-                                            class="pure-button pure-button-primary">修改</button>
-                                </td>
-                                <td>
-                                    <button type="button" 
-                                            onclick="deleteBook(${ book.id })"
-                                            class="pure-button pure-button-primary">刪除</button>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                    </tbody>
-                </table>
-            </fieldset>
-        </form>
+
+        <table>
+            <!-- Rest Book List -->
+            <td valign="top">
+                <form class="pure-form">
+                    <fieldset>
+                        <legend>Rest Book List</legend>
+                        <table class="pure-table pure-table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>name</th>
+                                    <th>price</th>
+                                    <th>amount</th>
+                                    <th>修改</th>
+                                    <th>刪除</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach var="book" items="${ BookDao.getBooks() }">
+                                    <tr>
+                                        <td>${ book.id }</td>
+                                        <td>${ book.name }</td>
+                                        <td>${ book.price }</td>
+                                        <td>${ book.amount }</td>
+                                        <td>
+                                            <button type="button" 
+                                                    onclick="updateBook('${ book }')"
+                                                    class="pure-button pure-button-primary">修改</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" 
+                                                    onclick="deleteBook(${ book.id })"
+                                                    class="pure-button pure-button-primary">刪除</button>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                </form>
+            </td>
+            <!-- Rest Book Chart -->
+            <td valign="top">
+                <form class="pure-form">
+                    <fieldset>
+                        <legend>Rest Book Chart</legend>
+                        <div id="piechart" style="width: 900px; height: 500px;"></div>
+                    </fieldset>
+                </form>
+            </td>
+        </table>
 
         <table>
             <td valign="top">
@@ -110,6 +156,7 @@
             </td>
             <td valign="top">
                 <form class="pure-form"
+                      onsubmit="return deleteConfirm();"
                       method="post" action="/JavaWeb0531/rest/book">
                     <fieldset>
                         <legend>Rest Book Delete</legend>
