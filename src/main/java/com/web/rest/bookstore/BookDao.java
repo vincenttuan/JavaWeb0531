@@ -2,6 +2,8 @@ package com.web.rest.bookstore;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +13,7 @@ public class BookDao {
     public static List<Book> books = new ArrayList<>();
     // 資料庫連線物件
     private static Connection conn;
+    
     static {
         try {
             // 資料庫驅動物件
@@ -26,6 +29,24 @@ public class BookDao {
     
     // 多筆查詢
     public static List<Book> getBooks() {
+        books.clear();
+        String sql = "SELECT id, name, price, amount, ts FROM Book";
+        try(Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);) {
+            // 所抓到的每一筆紀錄，要注入到 book 物件中存放
+            while (rs.next()) {
+                Book book = new Book();
+                book.setId(rs.getInt("id"));
+                book.setName(rs.getString("name"));
+                book.setPrice(rs.getInt("price"));
+                book.setAmount(rs.getInt("amount"));
+                // 加入到 books 集合中
+                books.add(book);
+            }
+            
+        } catch (Exception e) {
+        }
+        
         return books;
     }
     
