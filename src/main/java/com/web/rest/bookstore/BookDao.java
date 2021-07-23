@@ -105,7 +105,17 @@ public class BookDao {
         if(oBook == null) {
             return false;
         }
-        books.remove(oBook);
-        return true;
+        
+        String sql = "Delete from Book Where id=?";
+        try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, id);
+            int rowcount = pstmt.executeUpdate();
+            return rowcount == 1 ? true : false;
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            return false;
+        }
+        
+        
     }
 }
