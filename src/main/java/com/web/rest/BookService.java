@@ -40,8 +40,9 @@ public class BookService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response createBook(@FormParam("id") Integer id, 
                              @FormParam("name") String name,
-                             @FormParam("price") Integer price) {
-        Book book = new Book(id, name, price);
+                             @FormParam("price") Integer price,
+                             @FormParam("amount") Integer amount) {
+        Book book = new Book(id, name, price, amount);
         if(BookDao.createBook(book)) {
             // 重導指定頁面
             URI location = URI.create("http://localhost:8080/JavaWeb0531/forms/rest_book.jsp");
@@ -58,8 +59,9 @@ public class BookService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateBook(@FormParam("id") Integer id, 
                              @FormParam("name") String name,
-                             @FormParam("price") Integer price) {
-        Book book = new Book(id, name, price);
+                             @FormParam("price") Integer price,
+                             @FormParam("amount") Integer amount) {
+        Book book = new Book(id, name, price, amount);
         if(BookDao.updateBook(id, book)) {
             // 重導指定頁面
             URI location = URI.create("http://localhost:8080/JavaWeb0531/forms/rest_book.jsp");

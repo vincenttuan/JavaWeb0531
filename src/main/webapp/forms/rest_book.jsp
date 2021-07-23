@@ -17,6 +17,7 @@
                 document.getElementById('uId').value = book.id;
                 document.getElementById('uName').value = book.name;
                 document.getElementById('uPrice').value = book.price;
+                document.getElementById('uAmount').value = book.amount;
             }
             
             function deleteBook(id) {
@@ -44,6 +45,7 @@
                             <th>id</th>
                             <th>name</th>
                             <th>price</th>
+                            <th>amount</th>
                             <th>修改</th>
                             <th>刪除</th>
                         </tr>
@@ -54,6 +56,7 @@
                                 <td>${ book.id }</td>
                                 <td>${ book.name }</td>
                                 <td>${ book.price }</td>
+                                <td>${ book.amount }</td>
                                 <td>
                                     <button type="button" 
                                             onclick="updateBook('${ book }')"
@@ -80,6 +83,7 @@
                         <input name="id" type="text" placeholder="id"><p /> 
                         <input name="name" type="text" placeholder="名稱"><p /> 
                         <input name="price" type="text" placeholder="價格"><p />
+                        <input name="amount" type="text" placeholder="數量"><p />
                         <p />
                         <button type="submit" 
                                 class="pure-button pure-button-primary">新增</button>
@@ -96,6 +100,7 @@
                         <input id="uId" name="id" type="text" placeholder="id" readonly><p /> 
                         <input id="uName" name="name" type="text" placeholder="名稱"><p /> 
                         <input id="uPrice" name="price" type="text" placeholder="價格"><p />
+                        <input id="uAmount" name="amount" type="text" placeholder="數量"><p />
                         <p />
                         <button type="submit" 
                                 class="pure-button pure-button-primary">修改</button>

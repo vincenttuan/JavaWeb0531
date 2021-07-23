@@ -8,18 +8,18 @@ public class Book {
     private Integer id;
     private String name;
     private Integer price;
+    private Integer amount;
 
     public Book() {
     }
 
-    public Book(Integer id, String name, Integer price) {
+    public Book(Integer id, String name, Integer price, Integer amount) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.amount = amount;
     }
-    
-    
-    
+
     public Integer getId() {
         return id;
     }
@@ -44,12 +44,21 @@ public class Book {
         this.price = price;
     }
 
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 37 * hash + Objects.hashCode(this.id);
-        hash = 37 * hash + Objects.hashCode(this.name);
-        hash = 37 * hash + Objects.hashCode(this.price);
+        int hash = 5;
+        hash = 89 * hash + Objects.hashCode(this.id);
+        hash = 89 * hash + Objects.hashCode(this.name);
+        hash = 89 * hash + Objects.hashCode(this.price);
+        hash = 89 * hash + Objects.hashCode(this.amount);
         return hash;
     }
 
@@ -74,10 +83,12 @@ public class Book {
         if (!Objects.equals(this.price, other.price)) {
             return false;
         }
+        if (!Objects.equals(this.amount, other.amount)) {
+            return false;
+        }
         return true;
     }
-    
-    
+
     
     @Override
     public String toString() {
