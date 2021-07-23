@@ -16,19 +16,17 @@
             function drawChart() {
 
                 var data = google.visualization.arrayToDataTable([
-                    ['Task', 'Hours per Day'],
-                    ['Work', 11],
-                    ['Eat', 2],
-                    ['Commute', 2],
-                    ['Watch TV', 2],
-                    ['Sleep', 7]
+                    ['Name', 'Amount'],
+                    <c:forEach var="bsv" items="${ BookDao.getBookStatView() }">
+                    ['${ bsv.name }', ${ bsv.amount }],
+                    </c:forEach>
                 ]);
 
                 var options = {
                     title: 'Book 數量統計'
                 };
-
-                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                // BarChart, PieChart, ColumnChart, LineChart  
+                var chart = new google.visualization.BarChart(document.getElementById('piechart'));
 
                 chart.draw(data, options);
             }
