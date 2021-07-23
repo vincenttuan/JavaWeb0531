@@ -25,7 +25,7 @@
                 ]);
 
                 var options = {
-                    title: 'My Daily Activities'
+                    title: 'Book 數量統計'
                 };
 
                 var chart = new google.visualization.PieChart(document.getElementById('piechart'));
