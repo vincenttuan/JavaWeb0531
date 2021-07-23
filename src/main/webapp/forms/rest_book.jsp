@@ -67,7 +67,6 @@
         </script>
     </head>
     <body style="padding: 20px">
-
         <table>
             <!-- Rest Book List -->
             <td valign="top">
@@ -121,6 +120,7 @@
         </table>
 
         <table>
+            <!-- Insert Book -->
             <td valign="top">
                 <form class="pure-form"
                       method="post" action="/JavaWeb0531/rest/book">
@@ -137,6 +137,7 @@
                     </fieldset>
                 </form>
             </td>
+            <!-- Update Book -->
             <td valign="top">
                 <form class="pure-form"
                       method="post" action="/JavaWeb0531/rest/book">
@@ -154,6 +155,7 @@
                     </fieldset>
                 </form>
             </td>
+            <!-- Delete Book -->
             <td valign="top">
                 <form class="pure-form"
                       onsubmit="return deleteConfirm();"
