@@ -1,5 +1,7 @@
 package com.web.rest.bookstore;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +9,20 @@ public class BookDao {
     
     // 書籍資料庫
     public static List<Book> books = new ArrayList<>();
+    // 資料庫連線物件
+    private static Connection conn;
+    static {
+        try {
+            // 資料庫驅動物件
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            // 建立 conn 物件
+            String url = "jdbc:derby://localhost:1527/javaweb";
+            String user = "app";
+            String password = "app";
+            conn = DriverManager.getConnection(url, user, password);
+        } catch (Exception e) {
+        }
+    }
     
     // 多筆查詢
     public static List<Book> getBooks() {
