@@ -86,6 +86,7 @@ public class BookDao {
             pstmt.setString(1, book.getName());
             pstmt.setInt(2, book.getPrice());
             pstmt.setInt(3, book.getAmount());
+            pstmt.setInt(4, id);
             
             int rowcount = pstmt.executeUpdate();
             return rowcount == 1 ? true : false;
