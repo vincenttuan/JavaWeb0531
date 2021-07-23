@@ -44,6 +44,7 @@ public class BookDao {
         // 將 book 的資料給 oBook
         oBook.setName(book.getName());
         oBook.setPrice(book.getPrice());
+        oBook.setAmount(book.getAmount());
         return true;
     }
     
