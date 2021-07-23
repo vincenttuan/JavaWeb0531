@@ -67,6 +67,7 @@
         </script>
     </head>
     <body style="padding: 20px">
+        <!-- Book List & Chart -->
         <table>
             <!-- Rest Book List -->
             <td valign="top">
@@ -118,7 +119,8 @@
                 </form>
             </td>
         </table>
-
+        
+        <!-- Book Record Access -->
         <table>
             <!-- Insert Book -->
             <td valign="top">
