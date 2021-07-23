@@ -2,6 +2,7 @@ package com.web.rest.bookstore;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -78,11 +79,22 @@ public class BookDao {
         if(oBook == null) {
             return false;
         }
-        // 將 book 的資料給 oBook
-        oBook.setName(book.getName());
-        oBook.setPrice(book.getPrice());
-        oBook.setAmount(book.getAmount());
-        return true;
+        // 將 book 的資料更新到資料表中
+        String sql = "Update Book Set name=?, price=?, amount=? Where id=?";
+        try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            pstmt.setString(1, book.getName());
+            pstmt.setInt(2, book.getPrice());
+            pstmt.setInt(3, book.getAmount());
+            
+            int rowcount = pstmt.executeUpdate();
+            return rowcount == 1 ? true : false;
+            
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+            return false;
+        }
+        
     }
     
     // 刪除
