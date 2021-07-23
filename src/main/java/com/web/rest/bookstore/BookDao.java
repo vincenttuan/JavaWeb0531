@@ -129,4 +129,28 @@ public class BookDao {
         
         
     }
+    
+    // BookStatView
+    public static List<BookStatView> getBookStatView() {
+        List<BookStatView> list = new ArrayList<>();
+        
+        String sql = "SELECT name, amount, subtotal, avgprice FROM BookStatView";
+        try(Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);) {
+            // 所抓到的每一筆紀錄，要注入到 bsv 物件中存放
+            while (rs.next()) {
+                BookStatView bsv = new BookStatView();
+                bsv.setName(rs.getString("name"));
+                bsv.setAmount(rs.getInt("amount"));
+                bsv.setSubtotal(rs.getInt("subtotal"));
+                bsv.setAvgprice(rs.getInt("avgprice"));
+                // 加入到 list 集合中
+                list.add(bsv);
+            }
+            
+        } catch (Exception e) {
+        }
+        
+        return list;
+    } 
 }
