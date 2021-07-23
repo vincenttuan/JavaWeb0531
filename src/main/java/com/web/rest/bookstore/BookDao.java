@@ -66,8 +66,19 @@ public class BookDao {
                 .findAny()
                 .isPresent();
         if(flag == false) {
-            books.add(book);
-            return true;
+            String sql = "Insert into Book(name, price, amount) values(?, ?, ?)";
+            try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                pstmt.setString(1, book.getName());
+                pstmt.setInt(2, book.getPrice());
+                pstmt.setInt(3, book.getAmount());
+                int rowcount = pstmt.executeUpdate();
+                return rowcount == 1 ? true : false;
+            } catch (Exception e) {
+                e.printStackTrace(System.out);
+                return false;
+            }
+            
+            
         }
         return false;
     }
