@@ -80,7 +80,7 @@
                       method="post" action="/JavaWeb0531/rest/book">
                     <fieldset>
                         <legend>Rest Book POST</legend>
-                        <input name="id" type="text" placeholder="id"><p /> 
+                        <input name="id" type="hidden" placeholder="id" value="0"> 
                         <input name="name" type="text" placeholder="名稱"><p /> 
                         <input name="price" type="text" placeholder="價格"><p />
                         <input name="amount" type="text" placeholder="數量"><p />
