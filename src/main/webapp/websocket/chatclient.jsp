@@ -15,15 +15,15 @@
                 ws = new WebSocket(chaturl); // 發送連線
                 ws.onopen = function(evt) { // Server 回應
                     console.log('server onopen:' + evt.data);
-                    result.insertAdjacentHTML("befordend", '連到 server <br>');
+                    result.insertAdjacentHTML("beforeend", '連到 server <br>');
                 };
                 ws.onmessage = function(evt) { // Server 回應
                     console.log('server onmessage:' + evt.data);
-                    result.insertAdjacentHTML("befordend", evt.data + '<br>');
+                    result.insertAdjacentHTML("beforeend", evt.data + '<br>');
                 };
                 ws.onclose = function(evt) { // Server 回應
                     console.log('server onclose:' + evt);
-                    result.insertAdjacentHTML("befordend", '關閉連線 <br>');
+                    result.insertAdjacentHTML("beforeend", '關閉連線 <br>');
                     ws = null;
                 };
             }
