@@ -5,6 +5,39 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Chat client</title>
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
+        <script>
+            // char server 路徑
+            var chaturl = 'http://localhost:8080/JavaWeb0531/websocket/chat';
+            // 建立 websocket 物件
+            var ws = null;
+            
+            function onOpen() { 
+                ws = new WebSocket(chaturl); // 發送連線
+                ws.onopen = function(evt) { // Server 回應
+                    conlog.log('server onopen:' + evt.data);
+                };
+                ws.onmessage = function(evt) { // Server 回應
+                    conlog.log('server onmessage:' + evt.data);
+                };
+                ws.onclose = function(evt) { // Server 回應
+                    conlog.log('server onclose:' + evt);
+                    ws = null;
+                };
+            }
+            
+            function send() {
+                
+            }
+            
+            function onClose() {
+                if(ws != null) {
+                    ws.close();
+                } else {
+                    alert('請先按下 Open 鍵')
+                }
+            }
+            
+        </script>
     </head>
     <body style="padding: 20px">
         <form class="pure-form">
