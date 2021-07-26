@@ -19,11 +19,13 @@ public class ChatServer {
         }
         sessions.add(session);
         System.out.println("歡迎 " + session.getId() + " 加入");
+        sendAll("歡迎 " + session.getId() + " 加入");
     }
     
     @OnMessage
     public void onMessage(String message, Session session) {
         System.out.println("id=" + session.getId() + " 說:" + message);
+        sendAll(message);
     }
     
     @OnClose
@@ -31,6 +33,15 @@ public class ChatServer {
         System.out.println("id=" + session.getId() + " 離開");
         if(sessions != null) {
             sessions.remove(session);
+            sendAll(session.getId() + "離開了");
+        }
+    }
+    
+    private void sendAll(String message) {
+        if(sessions != null) {
+            for(Session session : sessions) {
+                session.getAsyncRemote().sendText(message);
+            }
         }
     }
     

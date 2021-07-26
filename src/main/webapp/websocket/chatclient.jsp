@@ -26,7 +26,7 @@
             }
             
             function send() {
-                
+                ws.send(message.value);
             }
             
             function onClose() {
