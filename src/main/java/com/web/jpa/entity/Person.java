@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "Person")
@@ -24,6 +26,7 @@ public class Person implements Serializable {
     private Integer age;
     
     @Column
+    @Temporal(TemporalType.DATE)
     private Date ts = new Date();
 
     public Person() {
