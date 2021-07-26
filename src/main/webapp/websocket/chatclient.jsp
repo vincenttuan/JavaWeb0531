@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
         <script>
             // char server 路徑
-            var chaturl = 'http://localhost:8080/JavaWeb0531/websocket/chat';
+            var chaturl = 'ws://localhost:8080/JavaWeb0531/websocket/chat';
             // 建立 websocket 物件
             var ws = null;
             
