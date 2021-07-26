@@ -1,6 +1,8 @@
 package com.web.websocket;
 
 import java.util.concurrent.CopyOnWriteArraySet;
+import javax.websocket.OnClose;
+import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 
@@ -15,6 +17,19 @@ public class ChatServer {
         }
         sessions.add(session);
         System.out.println("歡迎 " + session.getId() + " 加入");
+    }
+    
+    @OnMessage
+    public void onMessage(String message, Session session) {
+        System.out.println("id=" + session.getId() + " 說:" + message);
+    }
+    
+    @OnClose
+    public void onClose(Session session) {
+        System.out.println("id=" + session.getId() + " 離開");
+        if(sessions != null) {
+            sessions.remove(session);
+        }
     }
     
 }
