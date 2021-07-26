@@ -14,13 +14,13 @@
             function onOpen() { 
                 ws = new WebSocket(chaturl); // 發送連線
                 ws.onopen = function(evt) { // Server 回應
-                    conlog.log('server onopen:' + evt.data);
+                    console.log('server onopen:' + evt.data);
                 };
                 ws.onmessage = function(evt) { // Server 回應
-                    conlog.log('server onmessage:' + evt.data);
+                    console.log('server onmessage:' + evt.data);
                 };
                 ws.onclose = function(evt) { // Server 回應
-                    conlog.log('server onclose:' + evt);
+                    console.log('server onclose:' + evt);
                     ws = null;
                 };
             }
