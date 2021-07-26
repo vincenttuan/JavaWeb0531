@@ -5,7 +5,9 @@ import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
+import javax.websocket.server.ServerEndpoint;
 
+@ServerEndpoint("/websocket/chat")
 public class ChatServer {
     // 存放 Client 端的 session 物件
     private static CopyOnWriteArraySet<Session> sessions;
